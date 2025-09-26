@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Nama Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen" class="screen active">
+        <h1>🇮🇩 Tebak Nama Indonesia 🗺️</h1>
+        <p>Masukkan nama Anda untuk memulai:</p>
+        <input type="text" id="playerNameInput" placeholder="Nama Pemain">
+        <button onclick="startGame()">Mulai Game</button>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div class="header">
+            <span id="playerDisplay"></span> |
+            Soal ke: <span id="questionCounter">0/50</span> |
+            Skor: <span id="scoreDisplay">0</span>
+        </div>
+        
+        <div id="timer-box">
+            Waktu: <span id="timerDisplay">45</span>s
+        </div>
+
+        <h2 id="questionText">Pertanyaan akan muncul di sini...</h2>
+        
+        <div id="optionsContainer">
+            </div>
+
+        <div id="feedback" class="feedback-text"></div>
+    </div>
+
+    <div id="result-screen" class="screen">
+        <h2>🎉 Permainan Selesai! 🎉</h2>
+        <p>Selamat, <span id="finalPlayerName"></span>!</p>
+        <p>Skor Akhir Anda: <span id="finalScoreDisplay"></span></p>
+        <p>Total Waktu: <span id="finalTimeDisplay"></span> detik</p>
+        
+        <div class="leaderboard-section">
+            <h3>Leaderboard Lokal (Top 5)</h3>
+            <ol id="leaderboardList"></ol>
+            <p class="disclaimer">⚠️ Leaderboard ini hanya disimpan di browser Anda.</p>
+        </div>
+
+        <button onclick="window.location.reload()">Main Lagi</button>
+    </div>
+
+    <audio id="audioCorrect" src="https://www.soundjay.com/button/button-3.mp3" preload="auto"></audio>
+    <audio id="audioWrong" src="https://www.soundjay.com/button/button-10.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
